@@ -3,7 +3,6 @@ import Section from './Section/Section';
 import ContactForm from './Contact-form/Contact-form';
 import Filter from './FIlter/Filter';
 import ContactsList from './Contact-list/Contact-list';
-// ? // Масив контактів який перевіряє наявність та отримує контакти із local storage ;
 // ? // Кoмпонент App ;
 const App = () => {
   return (

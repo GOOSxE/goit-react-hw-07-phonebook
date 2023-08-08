@@ -1,8 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 const initialState = {
   contacts: [],
   filterValue: '',
 };
+
+export const fetchContactsDataThunk = createAsyncThunk('contacts/fetchContactsDataThunk', async (_, thumkApi) => {
+  try {
+    
+  } catch (error) {
+    
+  }
+});
+
 // ? // Слайс із редюсерами, що встановлюють імутабельним чином контакти, та поточне значення фільтру ;
 const contactsSlice = createSlice({
   name: 'contacts',
