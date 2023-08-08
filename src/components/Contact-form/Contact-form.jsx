@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import css from './Contact-form.module.css';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
+import { addNewContactThunk } from 'redux/contactsSlice';
 const ContactForm = () => {
   let [name, setName] = useState('');
   let [number, setNumber] = useState('');
@@ -20,13 +20,13 @@ const ContactForm = () => {
       alert(`${contactData.name} is already in contacts`);
       return;
     }
-    dispatch(addContact(contactData));
+    dispatch(addNewContactThunk(contactData));
   };
   const handleFormSubmit = event => {
     event.preventDefault();
     const contact = {
       name: name,
-      number: Number.parseInt(number) || number,
+      phone: Number.parseInt(number) || number,
       id: nanoid(),
     };
     onContactAdding(contact);
